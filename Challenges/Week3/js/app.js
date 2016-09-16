@@ -1,7 +1,7 @@
 //  1.)  Make sure you have a reference to jQuery from a CDN in the index.html file.  
 
 //  2.)  Use a jQuery to hide all of the answers to all the questions.
-var numToggles = true;
+var numToggles = false;
 
 $('.answer').hide();
 
@@ -10,6 +10,7 @@ $('.answer').hide();
     Hint: You can use "this" inside your jQuery function to reference a selected DOM node.  */
 $('.flash-card').hover(function () {
         console.log("Mouse In");
+        console.log(this);
         $(this).find('.answer').show();
     },
 
@@ -23,8 +24,7 @@ $('.flash-card').hover(function () {
     Bonus:  Change the text of the button using jQuery when you toggle the answers on/off. */  
 
 $('.cheat-button').click(function () {
-   console.log("Button Clicked");
-    numToggles += 1;
+    numToggles = !numToggles;
 
     $('.answer').toggle(function () {
         console.log("Toggled");
