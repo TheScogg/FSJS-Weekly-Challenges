@@ -1,7 +1,7 @@
 //  1.)  Make sure you have a reference to jQuery from a CDN in the index.html file.  
 
 //  2.)  Use a jQuery to hide all of the answers to all the questions.
-var numToggles = 0;
+var numToggles = true;
 
 $('.answer').hide();
 
@@ -29,7 +29,7 @@ $('.cheat-button').click(function () {
     $('.answer').toggle(function () {
         console.log("Toggled");
         console.log(numToggles);
-        if (numToggles % 2 !== 0) {$('.cheat-button').text("Hide Answers");} else {
+        if (numToggles) {$('.cheat-button').text("Hide Answers");} else {
             $('.cheat-button').text("Show All Answers");
         }
 
