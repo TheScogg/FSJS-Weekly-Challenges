@@ -1,10 +1,11 @@
-function openBlock (id) {
+//Implement function to automate clicking nav buttons
+
+function openBlock (id, listID) {
+    //console.log(listID);
     var block = document.getElementById(id);
+    //console.log(typeof block);
 
-    //var test = document.getElementById("about");
 
-
-    console.log(block);
     var blocks = document.getElementById("main_content").getElementsByTagName("div");
     for (var y = 0; y < blocks.length; y++) {
         blocks[y].style.display = "none";
@@ -17,8 +18,15 @@ function openBlock (id) {
     // TODO: remove the "active" class from all of the li elements inside the menu
     $("#menu").children("li").removeClass("active");
     // TODO: add the "active" class to the li element that contains the link that was clicked
-    $('#' + id).parent().addClass("active");
-
+    //$('#' + id).parent().addClass("active");
+    //console.log(this.id);
+    var activeLi = document.getElementById(listID);
+    //console.log(listID);
+    //console.log(activeLi.parent().id);
+    //activeLi.parent().addClass("active");
+    //$("#about").addClass("active");
+    $(activeLi).parent("li").addClass("active");
+    //console.log($("#menu_item_about").parent().addClass("active"));
 
 }
 
@@ -26,10 +34,10 @@ function openBlock (id) {
 $("#menu").find("a").hover(function () {
     //console.log(this);
     $(this).addClass("hover");
-    }, function () {
+}, function () {
     //console.log("out");
     $(this).removeClass("hover");
-    });
+});
 
 // TODO: set up the tooltip plugin on all of the links in the menu
 $('#menu a').tooltip({
