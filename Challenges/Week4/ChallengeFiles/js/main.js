@@ -18,16 +18,8 @@ function openBlock (id, listID) {
     // TODO: remove the "active" class from all of the li elements inside the menu
     $("#menu").children("li").removeClass("active");
     // TODO: add the "active" class to the li element that contains the link that was clicked
-    //$('#' + id).parent().addClass("active");
-    //console.log(this.id);
     var activeLi = document.getElementById(listID);
-    //console.log(listID);
-    //console.log(activeLi.parent().id);
-    //activeLi.parent().addClass("active");
-    //$("#about").addClass("active");
     $(activeLi).parent("li").addClass("active");
-    //console.log($("#menu_item_about").parent().addClass("active"));
-
 }
 
 // TODO: add the "hover" class to the menu items when you hover over them
