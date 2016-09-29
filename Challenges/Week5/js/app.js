@@ -52,10 +52,20 @@ $(document).ready(function () {
 
     getPokemon();
 
+    //When you click on the button with class .poke-card inside #pokemon div, perform this :
     $("#pokemon").on("click", ".poke-card", function() {
-        console.log("CARD CLICKED");
-        //$("#pokemon").hide();
+        //Hide 20 Pokemon cards on screen
+        $("#pokemon").hide();
+        //Add HTML to individual details card, and make sure it shows.
+        $("#poke-details").html("<button id='close'>Close</button>").show();
     } );
+
+    //When you click on the button with id #close inside the #poke-details div, show original #pokemon div with
+    //the 20 cards, and hide the individual statistics in the #poke-details div.
+    $("#poke-details").on("click", "#close", function() {
+        $("#pokemon").show();
+        $("#poke-details").hide();
+    })
 });
 
 

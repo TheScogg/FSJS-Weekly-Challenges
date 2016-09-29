@@ -56,6 +56,17 @@ h1 {
     overflow: hidden;
 }
 
+#poke-details {
+    width: 50%;
+    height: 300px;
+    background: white;
+    color: black;
+    border-radius: 5px;
+    margin-top: 1em;
+    transition: all .2s ease-in-out;
+    overflow: hidden;
+}
+
 .poke-card img {
   float: left; 
 }
