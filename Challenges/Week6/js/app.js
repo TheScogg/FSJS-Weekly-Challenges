@@ -1,16 +1,21 @@
 $(document).ready(function () {
 
+    //Create Box Object Function
     function Box(height, width, volume) {
         this.height = height;
         this.width = width;
         this.volume = volume;
     }
 
+    //Create Box Object
     var myBox = new Box(0, 0, 0);
 
+    //When you click a button in the table div...
     $("table button").on('click', function () {
         console.log(this.id);
+        //Conditionals for determining which values to increment, and where to display said increments
         if (this.id === "HeightIncrease") {
+            //Increase height by 1, then reprint value to corresponding cell (#height)
             myBox.height++;
             $("#height").html("Height: \n" + myBox.height);
         } else if (this.id === "HeightDecrease" && myBox.height > 0) {
@@ -29,6 +34,7 @@ $(document).ready(function () {
             myBox.volume--;
             $("#volume").html("Volume: \n" + myBox.volume);
         } else if (this.id === "Print") {
+            //Compile height, width, volume into #output
             $("#output").html("Height: " + myBox.height + "<br>" + "Width: " + myBox.width + "<br>" + "Volume: " + myBox.volume);
         }
     });
